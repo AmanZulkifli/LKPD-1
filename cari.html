@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari</title>
+    <style>
+        body {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.warna {
+    color: blue;
+}
+
+    </style>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Search..">
+    <button onclick="search()">Submit</button>
+    <p id="searchStatus">Tidak mencari data...</p>
+
+    <script>
+    function search() {
+        var searchValue = document.getElementById('searchInput').value;
+        var searchStatus = document.getElementById('searchStatus');
+        
+        
+        if (searchValue) {
+            searchStatus.innerHTML = 'Mencari data <span class="warna">' + searchValue+ '...</span>';
+        } else {
+            searchStatus.textContent = "Tidak mencari apapun...";
+        }
+    }
+    </script>
+</body>
+</html>

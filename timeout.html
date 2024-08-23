@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sample Form</h1>
+    <div id="container">
+    </div>
+    <form id="isian" onsubmit="return stop()">
+        <label for="nama">Nama : </label>
+        <input id="nama" name="nama" type="text"> <br>
+        <label for="umur">Umur : </label>
+        <input id="umur" name="umur" type="number"> <br>
+        <label for="gender">Gender : </label>
+        <select name="gender" id="gender">
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select> <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const deadline = setTimeout(pesan, 5000);
+
+        function pesan() {
+            alert("Waktu habis");
+        }
+
+        function stop() {
+            clearTimeout(deadline);
+
+            let valuenama = document.getElementById('nama').value;
+            let valueumur = document.getElementById('umur').value;
+            let valuegender = document.getElementById('gender').value;
+
+            document.getElementById('container').innerHTML = '<p>' + valuenama + ' - ' + valueumur + ' - ' + valuegender + '</p>';
+            
+            return false; 
+        }
+    </script>
+</body>
+</html>

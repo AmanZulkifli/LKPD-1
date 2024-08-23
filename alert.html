@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer Button</title>
+    <style>
+        #tombol {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: green;
+        }
+
+        #timer {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="tombol">Munculkan Alert</button>
+    <p id="timer"></p>
+
+    <script>
+        function starttimer() {
+            var timerElement = document.getElementById('timer');
+            var count = 5;
+            
+            timerElement.style.display = 'block';
+            timerElement.textContent = "Danger! alert akan tertutup dalam " +count;
+
+            var interval = setInterval(function() {
+                count--;
+                timerElement.textContent = "Danger! alert akan tertutup dalam " +count;
+
+                if (count === 0) {
+                    clearInterval(interval);
+                    
+                        timerElement.style.display = 'none';
+                    
+                }
+            }, 1000);
+        }
+
+        document.getElementById('tombol').addEventListener('click', starttimer);
+    </script>
+
+</body>
+</html>
